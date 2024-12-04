@@ -1,0 +1,62 @@
+// custom.scss
+
+// Variables
+$event-bg-color: #f9f9f9;
+$event-border-color: #ddd;
+$event-title-color: #333;
+$event-subtitle-color: #555;
+$event-price-color: #e74c3c;
+$event-description-color: #666;
+
+// Mixins
+@mixin event-box-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@mixin event-transition {
+  transition: all 0.3s ease;
+}
+
+// Styling for the event section
+.event {
+  background-color: $event-bg-color;
+  border: 1px solid $event-border-color;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 20px;
+  @include event-box-shadow;
+  @include event-transition;
+
+  &:hover {
+    @include event-box-shadow;
+    transform: translateY(-5px);
+  }
+
+  .summary {
+    h2 {
+      color: $event-title-color;
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      color: $event-subtitle-color;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      color: $event-price-color;
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    p {
+      color: $event-description-color;
+      font-size: 1em;
+      line-height: 1.5;
+    }
+  }
+}
