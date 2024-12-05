@@ -60,3 +60,79 @@ $event-description-color: #666;
     }
   }
 }
+
+.event-form {
+  max-width: 600px;
+  margin: 2rem auto;
+
+  .form-field {
+    margin-bottom: 1.5rem;
+    
+    label {
+      display: block;
+      color: $event-subtitle-color;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid $event-border-color;
+      border-radius: 6px;
+      background-color: $event-bg-color;
+      font-size: 1rem;
+      @include event-transition;
+
+      &:focus {
+        outline: none;
+        border-color: darken($event-border-color, 15%);
+        background-color: white;
+      }
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+  }
+
+  .datetime-select {
+    select {
+      padding: 0.5rem;
+      border-radius: 4px;
+      border: 1px solid $event-border-color;
+      margin-right: 0.5rem;
+      background-color: $event-bg-color;
+      
+      &:focus {
+        outline: none;
+        border-color: darken($event-border-color, 15%);
+      }
+    }
+  }
+
+  .submit-button {
+    width: 100%;
+    padding: 1rem;
+    background-color: $event-price-color;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    @include event-transition;
+
+    &:hover {
+      background-color: darken($event-price-color, 10%);
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}

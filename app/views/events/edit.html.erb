@@ -1,19 +1,34 @@
-<h1>Editing <%= @event.name %></h1>
+<div class="event">
+  <div class="summary">
+    <h2>Editing <%= @event.name %></h2>
+  </div>
 
-<%= form_with(model: @event) do |f| %>
-  <%= f.label :name%>
-  <%= f.text_field :name %>
+  <%= form_with(model: @event, class: "event-form") do |f| %>
+    <div class="form-field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
 
-  <%= f.label :description%>
-  <%= f.text_area :description, rows: 5 %>
+    <div class="form-field">
+      <%= f.label :description %>
+      <%= f.text_area :description, rows: 5 %>
+    </div>
 
-  <%= f.label :location%>
-  <%= f.text_field :location %>
+    <div class="form-field">
+      <%= f.label :location %>
+      <%= f.text_field :location %>
+    </div>
 
-  <%= f.label :price%>
-  <%= f.number_field :price %>
+    <div class="form-field">
+      <%= f.label :price %>
+      <%= f.number_field :price %>
+    </div>
 
-  <%= f.label :starts_at%>
-  <%= f.datetime_select :starts_at, {ampm:true}, {class:"datetime"} %>
-  
-<% end %>
+    <div class="form-field">
+      <%= f.label :starts_at %>
+      <%= f.datetime_select :starts_at, {ampm: true}, {class: "datetime-select"} %>
+    </div>
+
+    <%= f.submit "Update my Event", class: "submit-button" %>
+  <% end %>
+</div>
