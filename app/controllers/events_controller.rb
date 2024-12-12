@@ -19,4 +19,9 @@ class EventsController < ApplicationController
       redirect_to event_path(@event)
       #or redicect_to @event
     end
+
+    def new
+      #event initiates a new event object with Event.new
+      @event = Event.new
+    end
 end
