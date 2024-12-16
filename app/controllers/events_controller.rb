@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
     def index
-       @events = Event.all
+       @events = Event.upcoming
     end
     #using id as parameter for find method
     def show
