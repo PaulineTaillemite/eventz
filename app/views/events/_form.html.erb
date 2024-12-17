@@ -24,5 +24,15 @@
       <%= f.datetime_select :starts_at, {ampm: true}, {class: "datetime-select"} %>
     </div>
 
+    <div class="form-field">
+      <%= f.label :capacity %>
+      <%= f.number_field :capacity %>
+    </div>
+
+    <div class="form-fiel">
+      <%= f.label :image_file_name %>
+      <%= f.text_field :image_file_name %>
+    </div>
+
     <%= f.submit%>
   <% end %>
