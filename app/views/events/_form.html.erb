@@ -1,4 +1,7 @@
   <%= form_with(model: event, class: "event-form") do |f| %>
+
+    <%= render "shared/errors", object: event %>
+
     <div class="form-field">
       <%= f.label :name %>
       <%= f.text_field :name, autofocus: true %>
