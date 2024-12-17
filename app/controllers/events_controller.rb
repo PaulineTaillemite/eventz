@@ -14,9 +14,11 @@ class EventsController < ApplicationController
     #we find the event and then use the update method (same as in the console) fetching the hash
     def update
       @event = Event.find(params[:id])
-      @event.update(event_params)
+      if @event.update(event_params)
       redirect_to event_path(@event)
-      #or redicect_to @event
+      else
+        render :edit, status: :unprocessable_entity
+      end
     end
 
     def new
