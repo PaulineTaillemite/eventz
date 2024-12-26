@@ -11,6 +11,12 @@
     </span>
     <h3> <%= pluralize(@event.capacity,"spot")%> &bull; <%= day_and_time(@event)%> in <%= @event.location %></h3>
     <p><%= @event.description %></p>
+
+    <div class="register">
+      <p>
+      <%= link_to "Who's registered?", event_registrations_path(@event) %>
+      </p>
+    </div>
   </div>
 </section>
 
