@@ -1,3 +1,5 @@
+command shift v to get preview
+
 # README
 
 This README would normally document whatever steps are necessary to get the
