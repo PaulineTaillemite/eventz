@@ -25,16 +25,4 @@ Things you may want to cover:
 
 * ...
 
-
-ceci est un test 
-ceci est un test 
-good morning
-
-
-commit commit bi 
-here we go
-and the last one
-commit
-commit bis
-
-one list commit and we are done 
+kaboush
