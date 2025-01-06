@@ -1,6 +1,6 @@
 module RegistrationsHelper
 
-  def register_or_sold_sold (event)
+  def register_or_sold_out (event)
     if event.sold_out?
       "Sold out!"
     else 
