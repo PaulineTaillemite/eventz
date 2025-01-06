@@ -5,5 +5,7 @@ class User < ApplicationRecord
 
   validates :email, format: { with: /\S+@\S+/ }, presence: true, uniqueness: { case_sensitive: false }
 
+  validates :password_confirmation, presence: true
+
 
 end
