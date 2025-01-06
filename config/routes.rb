@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  resources :users
-
   #replace the main page
   root "events#index"
 
   resources :events do
     resources :registrations
   end
+
+  resources :users
+  #get url signup for new action
+  get "signup" => "users#new"
   
 end
