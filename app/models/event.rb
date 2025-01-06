@@ -19,6 +19,10 @@ class Event < ApplicationRecord
   def free?
     price.blank? || price.zero?
   end
+
+  def sold_out?
+    (capacity - registrations.size).zero?
+  end
 end
 
 #.blank? method to know if it has been set or not ?
