@@ -25,6 +25,5 @@ Things you may want to cover:
 
 * ...
 
-kaboush
-kabush bis
+
 
