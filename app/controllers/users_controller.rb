@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
 
-  #you have to be signed in as an admin to run the actions except index and show
-  before_action :require_signin, except: [:index, :show]
-  before_action :require_admin, except: [:index, :show]
+  #you have to be signed in  to run the actions except index and show
+  before_action :require_signin, except: [:new, :create]
+  before_action :require_correct_user, only: [:edit, :update, :destroy]
+  before_action :require_admin, only: [:index]
 
   def index
     @users = User.all

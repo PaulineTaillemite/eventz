@@ -1,4 +1,9 @@
 class EventsController < ApplicationController
+
+    #you have to be signed in as an admin to run the actions except index and show
+    before_action :require_signin, except: [:index, :show]
+    before_action :require_admin, except: [:index, :show]
+    
     def index
        @events = Event.upcoming
     end
