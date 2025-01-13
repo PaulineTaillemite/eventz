@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :likes
   #replace the main page
   root "events#index"
 
