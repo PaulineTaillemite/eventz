@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  resources :likes
+  
+
   #replace the main page
   root "events#index"
 
   resources :events do
     resources :registrations
+    resources :likes
   end
 
   resources :users
