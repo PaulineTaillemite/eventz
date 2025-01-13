@@ -7,6 +7,9 @@
     <%= link_to "Delete Account", @user, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"button delete" %>
   </div>
 
+
+<% if @registrations.present? %>
+
   <h3> Registrations </h3>
   <% @registrations.each do |r| %>
     <div class="registration">
@@ -22,4 +25,6 @@
   
     </div>
   <% end %>
+  
+<% end %>
 </section>
