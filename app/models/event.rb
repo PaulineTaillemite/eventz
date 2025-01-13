@@ -2,6 +2,8 @@ class Event < ApplicationRecord
 
   has_many :registrations, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :likers, through: :likes, source: :user
+  # we are going through the likes relation to get the users
 
   validates :name, :description, :location, presence: true
 
