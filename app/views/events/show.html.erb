@@ -5,11 +5,7 @@
 
   <% if current_user %>
     <div class="likes">
-     <% if @like %>
-     <%= button_to "☆ Unlike", event_like_path(@event, @like), method: :delete  %>
-    <% else %>
-      <%= button_to "★ Like", event_likes_path(@event) %>
-    <% end %>
+      <%= like_or_unlike_button(@event, @like)%>
       <div class="count"> 
       <%= @likers.size %>
       </div>
