@@ -36,5 +36,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
-
+  def require_correct_user
+    @user = User.find(params[:id])
+    unless current_user?(@user)
+      redirect_to root_url, alert: "Unauthorized access!"
+    end
+  end
 end
+
+
