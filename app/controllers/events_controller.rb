@@ -5,7 +5,14 @@ class EventsController < ApplicationController
     before_action :require_admin, except: [:index, :show]
     
     def index
+      case params[:filter]
+      when "past"
+        @events = Event.past
+      when "free"
+        @events = Event.free
+      else
        @events = Event.upcoming
+      end
     end
     #using id as parameter for find method
     def show

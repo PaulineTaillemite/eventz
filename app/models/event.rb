@@ -21,8 +21,16 @@ class Event < ApplicationRecord
     where("starts_at > ?", Time.now).order("starts_at")
   end
 
+  def self.past
+    where("starts_at < ?", Time.now).order("starts_at")
+  end
+
   def free?
     price.blank? || price.zero?
+  end
+
+  def self.free
+    where(price: [nil, 0])
   end
 
   def sold_out?
